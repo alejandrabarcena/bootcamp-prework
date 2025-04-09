@@ -1,23 +1,95 @@
-/* Animación de "bouncing" para el botón */
-@keyframes bounce {
+/* Reset de estilos para asegurar que todo se vea de manera uniforme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo vibrante con gradientes y texturas */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente vibrante */
+  color: white;
+  line-height: 1.8;
+  padding: 50px;
+  animation: gradientBackground 10s ease infinite;
+}
+
+@keyframes gradientBackground {
   0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
+    background-position: 100% 0%;
   }
   50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-5px);
+    background-position: 0% 100%;
   }
   100% {
-    transform: translateY(0);
+    background-position: 100% 0%;
   }
 }
 
-/* Aplica la animación al botón cuando se le hace clic */
-button.bounce {
-  animation: bounce 0.5s ease-in-out;
+/* Estilos para las secciones */
+section {
+  margin-top: 60px;
 }
+
+h1, h2 {
+  font-size: 3rem;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+/* Botones para cada categoría */
+.vibe-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.vibe-btn:hover {
+  transform: scale(1.1);
+}
+
+.cv-button {
+  display: inline-block;
+  background-color: #9c27b0;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+.cv-button:active {
+  transform: scale(1);
+}
+
+/* Animación de escritura para el título */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+h1 {
+  white
