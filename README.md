@@ -7,3 +7,4 @@ Aquí documento mi proceso como futura desarrolladora 💅
 - HTML, CSS, JS
 - Python
 - Git y GitHub
+
