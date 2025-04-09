@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Perfil Profesional – Geekgirl ✨</title>
+  
+  <!-- Aquí enlazamos el archivo style.css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>👩‍💻 Alejandra Bárcena – @geekgirl</h1>
+  <p>🌸 Diseñadora UX/UI | Desarrolladora Web | Activista Feminista Interseccional</p>
+  <p>🌍 Apasionada por la tecnología con propósito, el arte digital y los perritos pug 🐶💖</p>
+  <p>🚴‍♀️ Creadora de experiencias con código, movimiento y corazón</p>
+  <p>🎓 Maestría en Comunicación | 🧠 Neurodivergente | 🌈 Identidad fluida</p>
+  <p>💼 Habilidades: HTML, CSS, JS, Python, Git, Figma, Branding, Tai Chi ☯️</p>
+  <p>📬 Contacto: alejandrabarcena2024@gmail.com</p>
+  <script src="script.js"></script>
+</body>
+</html>
