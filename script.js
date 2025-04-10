@@ -10,9 +10,14 @@ function changeColor() {
   document.body.style.background = colores[Math.floor(Math.random() * colores.length)];
 }
 
-// Animación de rebote (bouncing) para el botón
-let button = document.querySelector("button");
+// Animación de rebote para los botones
+let buttons = document.querySelectorAll('.vibe-btn');
 
-button.addEventListener("click", () => {
-
-
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.add('bounce');
+    setTimeout(() => {
+      button.classList.remove('bounce');
+    }, 1500); // Duración de la animación
+  });
+});
