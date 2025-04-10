@@ -8,7 +8,7 @@
 /* Fondo vibrante con gradientes y texturas */
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente vibrante */
+  background: linear-gradient(to right, #f8a8d1, #9c27b0); /* Gradiente vibrante */
   color: white;
   line-height: 1.8;
   padding: 50px;
@@ -34,15 +34,16 @@ section {
 
 h1, h2 {
   font-size: 3rem;
-  color: #ff6f61;
+  color: #fff;
   margin-bottom: 20px;
 }
 
 h2 {
   font-size: 2.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Botones para cada categoría */
+/* Botones interactivos */
 .vibe-btn {
   display: inline-block;
   padding: 12px 30px;
@@ -52,11 +53,12 @@ h2 {
   margin-top: 20px;
   margin-right: 15px;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vibe-btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cv-button {
@@ -81,7 +83,21 @@ h2 {
   transform: scale(1);
 }
 
-/* Animación de escritura para el título */
+/* Animación de rebote para los botones */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.vibe-btn {
+  animation: bounce 1.5s ease infinite;
+}
+
+/* Animación de texto para el título */
 @keyframes typing {
   from {
     width: 0;
@@ -92,4 +108,9 @@ h2 {
 }
 
 h1 {
-  white
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 4px solid white;
+  animation: typing 4s steps(40) 1s forwards;
+}
