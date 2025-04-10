@@ -1,96 +1,23 @@
-/* RESET DE ESTILOS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+// Cambiar fondo al azar cuando el usuario haga clic
+const colores = [
+  "linear-gradient(to right, #f8a8d1, #9c27b0)", // Rosa a morado
+  "linear-gradient(to right, #ff7e5f, #feb47b)", // Naranja a amarillo
+  "linear-gradient(to right, #00c6ff, #0072ff)", // Azul a azul claro
+  "linear-gradient(to right, #ff6a00, #ee0979)"  // Rojo a rosa
+];
+
+function changeColor() {
+  document.body.style.background = colores[Math.floor(Math.random() * colores.length)];
 }
 
-/* BODY - Fondo y Tipografía */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f1f1f1;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
-}
+// Animación de rebote para los botones
+let buttons = document.querySelectorAll('.vibe-btn');
 
-/* TÍTULO PRINCIPAL - H1 */
-h1 {
-  text-align: center;
-  color: #9c27b0;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* PÁRRAFOS */
-p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #555;
-  text-align: center;
-}
-
-/* ENLACE DEL CV - Botón */
-a {
-  display: inline-block;
-  background-color: #9c27b0;
-  color: #fff;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 2rem;
-}
-
-a:hover {
-  background-color: #ba68c8;
-  transform: scale(1.1);
-}
-
-/* SECCIÓN DE CONTACTO - Fondo y Diseño */
-section {
-  background: #ba68c8;
-  color: #fff;
-  padding: 40px 20px;
-  border-radius: 15px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-/* SECCIÓN DE CONTACTO - TÍTULO */
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* SECCIÓN DE CONTACTO - ENLACE DE EMAIL */
-section p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-section a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-section a:hover {
-  color: #f3f3f3;
-  text-decoration: none;
-}
-
-/* ANIMACIONES DE FONDO */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-body {
-  animation: fadeIn 2s ease-in-out;
-}
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.add('bounce');
+    setTimeout(() => {
+      button.classList.remove('bounce');
+    }, 1500); // Duración de la animación
+  });
+});

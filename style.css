@@ -1,96 +1,116 @@
-/* RESET DE ESTILOS */
+/* Reset de estilos para asegurar que todo se vea de manera uniforme */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY - Fondo y Tipografía */
+/* Fondo vibrante con gradientes y texturas */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f1f1f1;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  background: linear-gradient(to right, #f8a8d1, #9c27b0); /* Gradiente vibrante */
+  color: white;
+  line-height: 1.8;
+  padding: 50px;
+  animation: gradientBackground 10s ease infinite;
 }
 
-/* TÍTULO PRINCIPAL - H1 */
-h1 {
-  text-align: center;
-  color: #9c27b0;
+@keyframes gradientBackground {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Estilos para las secciones */
+section {
+  margin-top: 60px;
+}
+
+h1, h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-/* PÁRRAFOS */
-p {
+h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones interactivos */
+.vibe-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #555;
-  text-align: center;
+  color: white;
+  margin-top: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ENLACE DEL CV - Botón */
-a {
+.vibe-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cv-button {
   display: inline-block;
   background-color: #9c27b0;
-  color: #fff;
+  color: white;
   padding: 15px 30px;
   border-radius: 50px;
+  font-weight: bold;
   text-decoration: none;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 2rem;
 }
 
-a:hover {
-  background-color: #ba68c8;
+.cv-button:hover {
+  background-color: #ffeb3b;
   transform: scale(1.1);
 }
 
-/* SECCIÓN DE CONTACTO - Fondo y Diseño */
-section {
-  background: #ba68c8;
-  color: #fff;
-  padding: 40px 20px;
-  border-radius: 15px;
-  margin-top: 30px;
-  text-align: center;
+.cv-button:active {
+  transform: scale(1);
 }
 
-/* SECCIÓN DE CONTACTO - TÍTULO */
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* Animación de rebote para los botones */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-/* SECCIÓN DE CONTACTO - ENLACE DE EMAIL */
-section p {
-  font-size: 1.2rem;
-  margin-top: 10px;
+.vibe-btn {
+  animation: bounce 1.5s ease infinite;
 }
 
-section a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-section a:hover {
-  color: #f3f3f3;
-  text-decoration: none;
-}
-
-/* ANIMACIONES DE FONDO */
-@keyframes fadeIn {
+/* Animación de texto para el título */
+@keyframes typing {
   from {
-    opacity: 0;
+    width: 0;
   }
   to {
-    opacity: 1;
+    width: 100%;
   }
 }
 
-body {
-  animation: fadeIn 2s ease-in-out;
+h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 4px solid white;
+  animation: typing 4s steps(40) 1s forwards;
 }
